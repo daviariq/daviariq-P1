@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+class Person {
+    private:
+        std::string nama;
+
+    public:
+        Person() {
+            std::cout<< "Saya Telah Lahir Di Dunia" << std::endl;
+        }
+        Person(const std::string & nama){
+                std::cout<< "Manusia Bernama "<< nama << " Telah Lahir" << std::endl;
+                this -> nama = nama;
+        }
+        void introduce() {
+            std::cout<< "Nama Saya : " << this -> nama << std::endl;
+        }
+        std::string getnama() {
+            return this -> nama;
+        }
+        void introduce(Person& Obj) {
+            std::string diswarin = Obj.getnama();
+            std::cout<< "Halo " << diswarin << ", Nama Saya Adalah " << this -> nama << std::endl;
+        }
+};
+
+int main(){
+ Person Phyzo;
+ Person Phyzo2 ("Davi");
+ Phyzo2.introduce();
+ Person Phyzo3 ("Diswarin");
+ Phyzo2.introduce(Phyzo3);
+
+ return 0;
+}
